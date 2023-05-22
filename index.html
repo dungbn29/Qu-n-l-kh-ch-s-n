@@ -7,6 +7,8 @@
     
     <!-- import css -->
     <link rel="stylesheet" href="assets/css/main.css">
+    <link rel="stylesheet" href="assets/css/tab.css">
+    <link rel="stylesheet" href="assets/css/doi-ngon-ngu.css">
 
     <!-- import fontanswer - icon -->
     <link rel="stylesheet" href="./library/fontawesome/css/fontawesome.min.css">
@@ -17,20 +19,72 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     
-    <title>Title</title>
+    <title>QUẢN TRỊ KHÁCH SẠN</title>
     <link rel="icon" type="image/x-icon" href="">
 </head>
 <body>
 
     <!-- header -->
     <div class="header">
-        <h1>Đồ án web tĩnh fontend của Dũng</h1>
-        <h2>Loading.....</h2>
+        <span class="name-hotel">Dung's Hotel</span>
+        <div >
+            <input type="text" placeholder="Nhập từ khóa tìm kiếm" class="input-with-icon">
+        </div>
+        <div>
+            <span class="dang-nhap">ADMIN</span>
+        </div>
+        <div class="doi-ngon-ngu">
+            <img id="logo" src="assets/images/co-vn.png" alt="Logo Tiếng Việt">
+            <button id="btnToggleLang" class="language">VN</button>
+        </div>
     </div>
 
     <!-- main -->
     <div class="main">
+        <div class="tab">
+            <button class="tablinks" onclick="openTab(event, 'Tab1')">Sơ đồ phòng</button>
+            <button class="tablinks" onclick="openTab(event, 'Tab2')">Lễ Tân</button>
+            <button class="tablinks" onclick="openTab(event, 'Tab3')">Lịch Đặt Phòng</button>
+            <button class="tablinks" onclick="openTab(event, 'Tab4')">Khách Đoàn</button>
+            <button class="tablinks" onclick="openTab(event, 'Tab5')">Thống Kê</button>
+            <button class="tablinks" onclick="openTab(event, 'Tab6')">Phản Hồi</button>
+            <button class="tablinks" onclick="openTab(event, 'Tab7')">Dịch Vụ</button>
+        </div>
 
+        <div id="Tab1" class="tabcontent">
+            <h3>Content for Tab 1</h3>
+            <p>This is the content for Tab 1.</p>
+        </div>
+
+        <div id="Tab2" class="tabcontent">
+            <h3>Content for Tab 2</h3>
+            <p>This is the content for Tab 2.</p>
+        </div>
+
+        <div id="Tab3" class="tabcontent">
+            <h3>Content for Tab 3</h3>
+            <p>This is the content for Tab 3.</p>
+        </div>
+
+        <div id="Tab4" class="tabcontent">
+            <h3>Content for Tab 4</h3>
+            <p>This is the content for Tab 1.</p>
+        </div>
+
+        <div id="Tab5" class="tabcontent">
+            <h3>Content for Tab 5</h3>
+            <p>This is the content for Tab 1.</p>
+        </div>
+
+        <div id="Tab6" class="tabcontent">
+            <h3>Content for Tab 6</h3>
+            <p>This is the content for Tab 1.</p>
+        </div>
+
+        <div id="Tab7" class="tabcontent">
+            <h3>Content for Tab 7</h3>
+            <p>This is the content for Tab 1.</p>
+        </div>
     </div>
 
     <!-- footer -->
@@ -41,7 +95,9 @@
     <!-- Import thu vien Jquery -->
     <script src="library/jquery.min.js"></script>
 
-    <!-- Import file main.js -->
+    <!-- Import file js -->
     <script src="assets/js/main.js"></script>
+    <script src="assets/js/doi-ngon-ngu.js"></script>
+    <script src="assets/js/tab.js"></script>
 </body>
 </html>

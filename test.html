@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Đăng ký và đăng nhập</title>
+  
+  <style>
+    .form-container {
+  margin-bottom: 20px;
+}
+
+h1, h2 {
+  text-align: center;
+}
+
+input[type="text"], input[type="password"] {
+  display: block;
+  margin-bottom: 10px;
+}
+
+button {
+  display: block;
+  margin: 10px auto;
+}
+
+
+  </style>
+</head>
+<body>
+  <h1>Đăng ký và đăng nhập</h1>
+
+  <div id="registration" class="form-container">
+    <h2>Đăng ký</h2>
+    <input type="text" id="regUsername" placeholder="Tài khoản">
+    <input type="password" id="regPassword" placeholder="Mật khẩu">
+    <button id="btnRegister">Đăng ký</button>
+  </div>
+
+  <div id="login" class="form-container">
+    <h2>Đăng nhập</h2>
+    <input type="text" id="loginUsername" placeholder="Tài khoản">
+    <input type="password" id="loginPassword" placeholder="Mật khẩu">
+    <button id="btnLogin">Đăng nhập</button>
+  </div>
+
+  <script>// Lấy các phần tử HTML
+const registrationForm = document.getElementById('registration');
+const loginForm = document.getElementById('login');
+const registerButton = document.getElementById('btnRegister');
+const loginButton = document.getElementById('btnLogin');
+
+// Xử lý sự kiện đăng ký
+registerButton.addEventListener('click', function() {
+  const username = document.getElementById('regUsername').value;
+  const password = document.getElementById('regPassword').value;
+
+  // Lưu thông tin tài khoản vào localStorage
+  localStorage.setItem(username, password);
+
+  // Xóa các trường nhập liệu
+  document.getElementById('regUsername').value = '';
+  document.getElementById('regPassword').value = '';
+
+  alert('Đăng ký thành công!');
+});
+
+// Xử lý sự kiện đăng nhập
+loginButton.addEventListener('click', function() {
+  const username = document.getElementById('loginUsername').value;
+  const password = document.getElementById('loginPassword').value;
+
+  // Kiểm tra tài khoản và mật khẩu từ localStorage
+  const storedPassword = localStorage.getItem(username);
+
+  if (storedPassword === password) {
+    alert('Đăng nhập thành công!');
+    // Xóa các trường nhập liệu
+    document.getElementById('loginUsername').value = '';
+    document.getElementById('loginPassword').value = '';
+  } else {
+    alert('Tài khoản hoặc mật khẩu không chính xác!');
+  }
+});
+</script>
+</body>
+</html>

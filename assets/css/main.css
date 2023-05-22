@@ -3,3 +3,46 @@
     padding: 0;
 }
 
+
+.header{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    padding: 0px;
+    width: 100%;
+    height: 80px;
+    left: 0px;
+    top: 0px;
+    background: #394DFF;    
+}
+
+.name-hotel{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 240px;
+    font-size: 25px;
+    color: #fff;
+}
+
+.input-with-icon{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    gap: 10px;
+    width: 1000px;
+    height: 40px;
+    background: #FFFFFF;
+    border-radius: 4px;
+    font-size: 20px;
+    text-indent: 10px;
+}
+
+
+.dang-nhap{
+    margin-left: 300px;
+}
+
+.main{
+    display: flex;
+}

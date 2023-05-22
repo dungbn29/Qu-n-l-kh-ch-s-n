@@ -1,0 +1,16 @@
+.doi-ngon-ngu {
+    display: flex;
+    align-items: center;
+    margin-left: 300px;
+}
+
+#logo {
+    height: 25px;
+}
+
+.language {
+    font-size: 20px;
+    background-color: transparent;
+    border: none;
+    cursor: pointer;
+}
