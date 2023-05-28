@@ -1,14 +1,14 @@
 let currentLanguage = 'vi';
 
 const languageData = {
-  vi: {
-    toggleButton: 'VN',
-    logoImage: 'assets/images/co-vn.png'
-  },
-  en: {
-    toggleButton: 'EN',
-    logoImage: 'assets/images/co-anh.png'
-  }
+    vi: {
+        toggleButton: 'VN',
+        logoImage: 'assets/images/co-vn.png'
+    },
+    en: {
+        toggleButton: 'EN',
+        logoImage: 'assets/images/co-anh.png'
+    }
 };
 
 function toggleLanguage() {

@@ -9,6 +9,7 @@
     <link rel="stylesheet" href="assets/css/main.css">
     <link rel="stylesheet" href="assets/css/tab.css">
     <link rel="stylesheet" href="assets/css/doi-ngon-ngu.css">
+    <link rel="stylesheet" href="assets/css/le-tan.css">
 
     <!-- import fontanswer - icon -->
     <link rel="stylesheet" href="./library/fontawesome/css/fontawesome.min.css">
@@ -52,38 +53,63 @@
         </div>
 
         <div id="Tab1" class="tabcontent">
-            <h3>Content for Tab 1</h3>
-            <p>This is the content for Tab 1.</p>
+            <div class="header-tab1">
+                <div class="trang-thai">
+                    <div class="theo-o" id="filter-buttons">
+                        <button id="btn-all">Tất cả</button>
+                        <button id="btn-active">Đang HĐ</button>
+                        <button id="btn-empty">Trống</button>
+                        <button id="btn-booked">Đã đặt</button>
+                        <button id="btn-under-maintenance">Đang sửa</button>
+                    </div>
+
+                    <div class="theo-hang">
+
+                    </div>
+                </div>
+
+                <div class="loai-phong">
+
+                </div>
+            </div>
         </div>
 
-        <div id="Tab2" class="tabcontent">
-            <h3>Content for Tab 2</h3>
-            <p>This is the content for Tab 2.</p>
+        <div id="Tab2" class="tabcontent tab-2">
+            <p class="le-tan">Quản lý lễ tân</p>
+  
+            <table id="receptionist-table">
+                <tr>
+                    <th>Tên lễ tân</th>
+                    <th>Vị trí</th>
+                    <th>Hành động</th>
+                </tr>
+            </table>
+
+            <form id="receptionist-form">
+                <input type="text" id="name" placeholder="Tên lễ tân">
+                <input type="text" id="position" placeholder="Vị trí">
+                <button type="button" onclick="addReceptionist()">Thêm</button>
+            </form>
         </div>
 
         <div id="Tab3" class="tabcontent">
-            <h3>Content for Tab 3</h3>
-            <p>This is the content for Tab 3.</p>
+            
         </div>
 
         <div id="Tab4" class="tabcontent">
-            <h3>Content for Tab 4</h3>
-            <p>This is the content for Tab 1.</p>
+            
         </div>
 
         <div id="Tab5" class="tabcontent">
-            <h3>Content for Tab 5</h3>
-            <p>This is the content for Tab 1.</p>
+            
         </div>
 
         <div id="Tab6" class="tabcontent">
-            <h3>Content for Tab 6</h3>
-            <p>This is the content for Tab 1.</p>
+            
         </div>
 
         <div id="Tab7" class="tabcontent">
-            <h3>Content for Tab 7</h3>
-            <p>This is the content for Tab 1.</p>
+            
         </div>
     </div>
 
@@ -99,5 +125,6 @@
     <script src="assets/js/main.js"></script>
     <script src="assets/js/doi-ngon-ngu.js"></script>
     <script src="assets/js/tab.js"></script>
+    <script src="assets/js/le-tan.js"></script>
 </body>
 </html>

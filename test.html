@@ -1,85 +1,159 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <title>Đăng ký và đăng nhập</title>
-  
-  <style>
-    .form-container {
-  margin-bottom: 20px;
-}
-
-h1, h2 {
-  text-align: center;
-}
-
-input[type="text"], input[type="password"] {
-  display: block;
-  margin-bottom: 10px;
-}
-
-button {
-  display: block;
-  margin: 10px auto;
-}
-
-
-  </style>
+    <title>Quản lí đặt phòng khách sạn</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.0/dist/css/bootstrap.min.css">
+    <style>
+        td {
+            height: 100px;
+        }
+        .booked {
+            background-color: yellow;
+        }
+        .occupied {
+            background-color: red;
+        }
+        .available {
+            background-color: white;
+        }
+    </style>
 </head>
 <body>
-  <h1>Đăng ký và đăng nhập</h1>
+    <div class="container">
+        <h1>Quản lí đặt phòng khách sạn</h1>
+        <table class="table table-bordered">
+            <thead>
+                <tr>
+                    <th>Phòng</th>
+                    <th>Thứ 2</th>
+                    <th>Thứ 3</th>
+                    <th>Thứ 4</th>
+                    <th>Thứ 5</th>
+                    <th>Thứ 6</th>
+                    <th>Thứ 7</th>
+                    <th>Chủ nhật</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>101</td>
+                    <td data-room="101" data-day="Monday"></td>
+                    <td data-room="101" data-day="Tuesday"></td>
+                    <td data-room="101" data-day="Wednesday"></td>
+                    <td data-room="101" data-day="Thursday"></td>
+                    <td data-room="101" data-day="Friday"></td>
+                    <td data-room="101" data-day="Saturday"></td>
+                    <td data-room="101" data-day="Sunday"></td>
+                </tr>
+                <!-- Thêm các hàng khác tương tự -->
+            </tbody>
+        </table>
+    </div>
 
-  <div id="registration" class="form-container">
-    <h2>Đăng ký</h2>
-    <input type="text" id="regUsername" placeholder="Tài khoản">
-    <input type="password" id="regPassword" placeholder="Mật khẩu">
-    <button id="btnRegister">Đăng ký</button>
-  </div>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script>
+        // Lấy dữ liệu từ Local Storage
+        function getBookingData() {
+            const bookingData = localStorage.getItem("bookingData");
+            return bookingData ? JSON.parse(bookingData) : {};
+        }
 
-  <div id="login" class="form-container">
-    <h2>Đăng nhập</h2>
-    <input type="text" id="loginUsername" placeholder="Tài khoản">
-    <input type="password" id="loginPassword" placeholder="Mật khẩu">
-    <button id="btnLogin">Đăng nhập</button>
-  </div>
+        // Lưu dữ liệu vào Local Storage
+        function saveBookingData(data) {
+            localStorage.setItem("bookingData", JSON.stringify(data));
+        }
 
-  <script>// Lấy các phần tử HTML
-const registrationForm = document.getElementById('registration');
-const loginForm = document.getElementById('login');
-const registerButton = document.getElementById('btnRegister');
-const loginButton = document.getElementById('btnLogin');
+        // Chức năng thêm lịch đặt phòng
+        function bookRoom(room, day) {
+            const cell = document.querySelector(`td[data-room="${room}"][data-day="${day}"]`);
+            cell.classList.remove("occupied");
+            cell.classList.remove("available");
+            cell.classList.add("booked");
 
-// Xử lý sự kiện đăng ký
-registerButton.addEventListener('click', function() {
-  const username = document.getElementById('regUsername').value;
-  const password = document.getElementById('regPassword').value;
+            // Lấy dữ liệu hiện tại
+            const bookingData = getBookingData();
 
-  // Lưu thông tin tài khoản vào localStorage
-  localStorage.setItem(username, password);
+            // Thêm lịch đặt phòng mới
+            if (!bookingData[room]) {
+                bookingData[room] = {};
+            }
+            bookingData[room][day] = "booked";
 
-  // Xóa các trường nhập liệu
-  document.getElementById('regUsername').value = '';
-  document.getElementById('regPassword').value = '';
+            // Lưu dữ liệu mới vào Local Storage
+            saveBookingData(bookingData);
+        }
 
-  alert('Đăng ký thành công!');
-});
+        // Chức năng sửa lịch đặt phòng
+        function editBooking(room, day) {
+            const cell = document.querySelector(`td[data-room="${room}"][data-day="${day}"]`);
+            cell.classList.remove("booked");
+            cell.classList.remove("available");
+            cell.classList.add("occupied");
 
-// Xử lý sự kiện đăng nhập
-loginButton.addEventListener('click', function() {
-  const username = document.getElementById('loginUsername').value;
-  const password = document.getElementById('loginPassword').value;
+            // Lấy dữ liệu hiện tại
+            const bookingData = getBookingData();
 
-  // Kiểm tra tài khoản và mật khẩu từ localStorage
-  const storedPassword = localStorage.getItem(username);
+            // Cập nhật lịch đặt phòng
+            if (!bookingData[room]) {
+                bookingData[room] = {};
+            }
+            bookingData[room][day] = "occupied";
 
-  if (storedPassword === password) {
-    alert('Đăng nhập thành công!');
-    // Xóa các trường nhập liệu
-    document.getElementById('loginUsername').value = '';
-    document.getElementById('loginPassword').value = '';
-  } else {
-    alert('Tài khoản hoặc mật khẩu không chính xác!');
-  }
-});
-</script>
+            // Lưu dữ liệu mới vào Local Storage
+            saveBookingData(bookingData);
+        }
+
+        // Chức năng xóa lịch đặt phòng
+        function cancelBooking(room, day) {
+            const cell = document.querySelector(`td[data-room="${room}"][data-day="${day}"]`);
+            cell.classList.remove("booked");
+            cell.classList.remove("occupied");
+            cell.classList.add("available");
+
+            // Lấy dữ liệu hiện tại
+            const bookingData = getBookingData();
+
+            // Xóa lịch đặt phòng
+            if (bookingData[room] && bookingData[room][day]) {
+                delete bookingData[room][day];
+
+                // Nếu không còn lịch đặt phòng cho phòng này, xóa cả phòng
+                if (Object.keys(bookingData[room]).length === 0) {
+                    delete bookingData[room];
+                }
+
+                // Lưu dữ liệu mới vào Local Storage
+                saveBookingData(bookingData);
+            }
+        }
+
+        // Tải dữ liệu lịch đặt phòng từ Local Storage và áp dụng lên giao diện
+        function loadBookingData() {
+            const bookingData = getBookingData();
+            const cells = document.querySelectorAll("td[data-room][data-day]");
+
+            cells.forEach((cell) => {
+                const room = cell.getAttribute("data-room");
+                const day = cell.getAttribute("data-day");
+
+                if (bookingData[room] && bookingData[room][day]) {
+                    const status = bookingData[room][day];
+                    cell.classList.add(status);
+                } else {
+                    cell.classList.add("available");
+                }
+            });
+        }
+
+        // Sự kiện tải trang
+        document.addEventListener("DOMContentLoaded", () => {
+            loadBookingData();
+
+            // Gọi các hàm chức năng mẫu
+            bookRoom("101", "Monday");
+            editBooking("101", "Tuesday");
+            cancelBooking("101", "Wednesday");
+        });
+    </script>
 </body>
 </html>

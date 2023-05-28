@@ -1,0 +1,41 @@
+.tab-2{
+    width: 1500px;
+}
+
+.le-tan {
+    text-align: center;
+    font-size: 50px;
+    margin:20px 0;
+}
+
+#receptionist-table {
+    width: 100%;
+    border-collapse: collapse;
+    font-size: 25px;
+    margin-bottom: 20px;
+}
+
+#receptionist-table th,
+#receptionist-table td {
+    border: 1px solid #000;
+    padding: 10px;
+    text-align: left;
+    width: 500px;
+}
+
+#receptionist-form input {
+    display: block;
+    margin-bottom: 10px;
+    padding: 5px;
+    font-size: 20px;
+}
+
+#receptionist-form button{
+    padding: 10px;
+    font-size: 20px;
+}
+
+.sua, .xoa{
+    padding: 5px;
+    font-size: 20px;
+}
