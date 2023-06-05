@@ -1,61 +1,4 @@
-<!DOCTYPE html>
-<html>
-<head>
-  <title>Trang đánh giá sản phẩm</title>
-  <style>
-    #comment-form {
-      margin-bottom: 20px;
-    }
-    #comment-form input[type="text"], #comment-form textarea {
-      display: block;
-      margin-bottom: 10px;
-    }
-    #comment-form textarea {
-      resize: vertical;
-    }
-    #comment-list {
-      list-style-type: none;
-      padding: 0;
-    }
-    .comment {
-      margin-bottom: 20px;
-      padding: 10px;
-      border: 1px solid #ccc;
-    }
-    .comment .name {
-      font-weight: bold;
-    }
-    .rating span {
-      cursor: pointer;
-      color: gray;
-    }
-    .rating span.checked {
-      color: gold;
-    }
-  </style>
-</head>
-<body>
-  <h1>Bình luận sản phẩm</h1>
-
-  <ul id="comment-list"></ul>
-  
-  <div id="comment-form">
-    <input type="text" id="name" placeholder="Nhập tên của bạn">
-    <div class="rating">
-      <span onclick="rateProduct(1)">★</span>
-      <span onclick="rateProduct(2)">★</span>
-      <span onclick="rateProduct(3)">★</span>
-      <span onclick="rateProduct(4)">★</span>
-      <span onclick="rateProduct(5)">★</span>
-    </div>
-    <textarea id="comment" placeholder="Nhập đánh giá của bạn"></textarea>
-    <button onclick="submitComment()">Gửi đánh giá</button>
-  </div>
-
-  
-
-  <script>
-    var selectedRating = 0;
+var selectedRating = 0;
 
     function rateProduct(rating) {
       selectedRating = rating;
@@ -116,6 +59,3 @@
       }
       selectedRating = 0;
     }
-  </script>
-</body>
-</html>

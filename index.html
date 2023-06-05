@@ -10,6 +10,8 @@
     <link rel="stylesheet" href="assets/css/tab.css">
     <link rel="stylesheet" href="assets/css/doi-ngon-ngu.css">
     <link rel="stylesheet" href="assets/css/le-tan.css">
+    <link rel="stylesheet" href="assets/css/phan-hoi.css">
+    <link rel="stylesheet" href="assets/css/dich-vu.css">
 
     <!-- import fontanswer - icon -->
     <link rel="stylesheet" href="./library/fontawesome/css/fontawesome.min.css">
@@ -105,11 +107,41 @@
         </div>
 
         <div id="Tab6" class="tabcontent">
-            
+            <h1>Bình luận sản phẩm</h1>
+
+  <ul id="comment-list"></ul>
+  
+  <div id="comment-form">
+    <input type="text" id="name" placeholder="Nhập tên của bạn">
+    <div class="rating">
+      <span onclick="rateProduct(1)">★</span>
+      <span onclick="rateProduct(2)">★</span>
+      <span onclick="rateProduct(3)">★</span>
+      <span onclick="rateProduct(4)">★</span>
+      <span onclick="rateProduct(5)">★</span>
+    </div>
+    <textarea id="comment" placeholder="Nhập đánh giá của bạn"></textarea>
+    <button onclick="submitComment()">Gửi đánh giá</button>
+  </div>
+
+
         </div>
 
-        <div id="Tab7" class="tabcontent">
+        <div id="Tab7" class="tabcontent tab-dich-vu">
+            <div class="dich-vu">
+                <div class="anh-dich-vu taxi"></div>
+                <button>Gọi Xe</button>
+            </div>
+
+            <div class="dich-vu">
+                <div class="anh-dich-vu bike"></div>
+                <button >Đặt Xe</button>
+            </div>
             
+            <div class="dich-vu">
+                <div class="anh-dich-vu nha-hang"></div>
+                <button>Đặt Bàn</button>
+            </div>
         </div>
     </div>
 
@@ -122,9 +154,10 @@
     <script src="library/jquery.min.js"></script>
 
     <!-- Import file js -->
-    <script src="assets/js/main.js"></script>
+    <script src="asset s/js/main.js"></script>
     <script src="assets/js/doi-ngon-ngu.js"></script>
     <script src="assets/js/tab.js"></script>
     <script src="assets/js/le-tan.js"></script>
+    <script src="assets/js/phan-hoi.js"></script>
 </body>
 </html>

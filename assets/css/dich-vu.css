@@ -1,0 +1,26 @@
+.tab-dich-vu{
+    width: 100%;
+    
+}
+
+.dich-vu{
+    width: 100px;
+    height: 100px;
+}
+
+.anh-dich-vu{
+    width: 100%;
+    height: 100%;
+    background-image: url(assets/images/goi-taxi.png);
+    background-size: cover;
+
+}
+
+.taxi{
+    
+}
+
+.dich-vu button{
+    width: 100%;
+    padding: 10px 0;
+}
