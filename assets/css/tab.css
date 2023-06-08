@@ -1,8 +1,13 @@
+/* .tabcontent{
+  position: relative;
+} */
+
 .tab {
     /* overflow: hidden; */
     display: flex;
     flex-direction: column;
     width: 300px;
+    
 }
 
 .tab button {
@@ -13,6 +18,7 @@
     cursor: pointer;
     font-size: 30px;
     height: 80px;
+    width: 300px;
 }
 
 .tab button:hover {
@@ -20,7 +26,7 @@
 }
 
 .tab button.active {
-  background-color: rgb(0, 64, 255);
+  background-color: #394DFF;
   color: #ffff;
 }
 

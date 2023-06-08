@@ -31,7 +31,7 @@
     <div class="header">
         <span class="name-hotel">Dung's Hotel</span>
         <div >
-            <input type="text" placeholder="Nhập từ khóa tìm kiếm" class="input-with-icon">
+            <!-- <input type="text" placeholder="Nhập từ khóa tìm kiếm" class="input-with-icon"> -->
         </div>
         <div>
             <span class="dang-nhap">ADMIN</span>
@@ -88,7 +88,7 @@
             </table>
 
             <form id="receptionist-form">
-                <input type="text" id="name" placeholder="Tên lễ tân">
+                <input type="text" id="name-le-tan" placeholder="Tên lễ tân">
                 <input type="text" id="position" placeholder="Vị trí">
                 <button type="button" onclick="addReceptionist()">Thêm</button>
             </form>
@@ -107,40 +107,38 @@
         </div>
 
         <div id="Tab6" class="tabcontent">
-            <h1>Bình luận sản phẩm</h1>
-
-  <ul id="comment-list"></ul>
-  
-  <div id="comment-form">
-    <input type="text" id="name" placeholder="Nhập tên của bạn">
-    <div class="rating">
-      <span onclick="rateProduct(1)">★</span>
-      <span onclick="rateProduct(2)">★</span>
-      <span onclick="rateProduct(3)">★</span>
-      <span onclick="rateProduct(4)">★</span>
-      <span onclick="rateProduct(5)">★</span>
-    </div>
-    <textarea id="comment" placeholder="Nhập đánh giá của bạn"></textarea>
-    <button onclick="submitComment()">Gửi đánh giá</button>
-  </div>
-
-
+            <h1>Phản hồi của khách hàng</h1>
+            <ul id="comment-list"></ul>
+            <div id="comment-form">
+                <input type="text" id="name-kh" placeholder="Nhập tên của bạn">
+                <div class="rating star">
+                    <span onclick="rateProduct(1)">★</span>
+                    <span onclick="rateProduct(2)">★</span>
+                    <span onclick="rateProduct(3)">★</span>
+                    <span onclick="rateProduct(4)">★</span>
+                    <span onclick="rateProduct(5)">★</span>
+                </div>
+                <textarea id="comment" placeholder="Nhập đánh giá của bạn" rows="1"></textarea>
+                <button onclick="submitComment()">Gửi đánh giá</button>
+            </div>
         </div>
 
         <div id="Tab7" class="tabcontent tab-dich-vu">
-            <div class="dich-vu">
-                <div class="anh-dich-vu taxi"></div>
-                <button>Gọi Xe</button>
-            </div>
+            <div class="div-dich-vu">
+                <div class="dich-vu">
+                    <div class="anh-dich-vu taxi"></div>
+                    <button>Gọi Xe</button>
+                </div>
 
-            <div class="dich-vu">
-                <div class="anh-dich-vu bike"></div>
-                <button >Đặt Xe</button>
-            </div>
+                <div class="dich-vu">
+                    <div class="anh-dich-vu bike"></div>
+                    <button >Đặt Xe</button>
+                </div>
             
-            <div class="dich-vu">
-                <div class="anh-dich-vu nha-hang"></div>
-                <button>Đặt Bàn</button>
+                <div class="dich-vu">
+                    <div class="anh-dich-vu nha-hang"></div>
+                    <button>Đặt Bàn</button>
+                </div>
             </div>
         </div>
     </div>

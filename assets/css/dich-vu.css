@@ -3,21 +3,26 @@
     
 }
 
+.div-dich-vu{
+    display: flex;
+    width: 100%;
+}
+
 .dich-vu{
     width: 100px;
     height: 100px;
+    margin: 50px;
 }
 
 .anh-dich-vu{
     width: 100%;
     height: 100%;
-    background-image: url(assets/images/goi-taxi.png);
     background-size: cover;
 
 }
 
 .taxi{
-    
+    background-image: url(d:\dung\code\web\Quan-tri-khach-san\assets\images\co-vn.png);
 }
 
 .dich-vu button{

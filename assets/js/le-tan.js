@@ -1,11 +1,11 @@
 function addReceptionist() {
-  var nameInput = document.getElementById("name");
+  var nameInput = document.getElementById("name-le-tan");
   var positionInput = document.getElementById("position");
   
-  var name = nameInput.value;
+  var nameLeTan = nameInput.value;
   var position = positionInput.value;
   
-  if (name === "" || position === "") {
+  if (nameLeTan === "" || position === "") {
     alert("Vui lòng điền đầy đủ thông tin lễ tân.");
     return;
   }
@@ -16,8 +16,8 @@ function addReceptionist() {
   var nameCell = newRow.insertCell(0);
   var positionCell = newRow.insertCell(1);
   var actionCell = newRow.insertCell(2);
-  
-  nameCell.innerHTML = name;
+
+  nameCell.innerHTML = nameLeTan;
   positionCell.innerHTML = position;
   actionCell.innerHTML = "<button onclick='editReceptionist(this)' class='xoa' >Sửa</button> <button onclick='deleteReceptionist(this)' class='xoa'>Xóa</button>";
   
