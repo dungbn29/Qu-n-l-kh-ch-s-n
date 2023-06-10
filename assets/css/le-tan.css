@@ -4,14 +4,14 @@
 
 .le-tan {
     text-align: center;
-    font-size: 50px;
+    font-size: 30px;
     margin:20px 0;
 }
 
 #receptionist-table {
     width: 100%;
     border-collapse: collapse;
-    font-size: 25px;
+    font-size: 20px;
     margin-bottom: 20px;
 }
 
@@ -27,12 +27,14 @@
     display: block;
     margin-bottom: 10px;
     padding: 5px;
-    font-size: 20px;
+    font-size: 17px;
 }
 
 #receptionist-form button{
-    padding: 10px;
+    padding: 10px 20px;
     font-size: 20px;
+    border-radius: 6px;
+    background-color: #00ddff;
 }
 
 .sua, .xoa{

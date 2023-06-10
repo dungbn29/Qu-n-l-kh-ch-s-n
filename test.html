@@ -1,121 +1,193 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <title>Trang đánh giá sản phẩm</title>
+  <title>Lịch đặt phòng</title>
   <style>
-    #comment-form {
-      margin-bottom: 20px;
+    .lich-dat-phong {
+      margin-top: 20px;
+      display: flex;
     }
-    #comment-form input[type="text"], #comment-form textarea {
-      display: block;
+
+    .lich-dat-phong table th {
+      width: 100px;
+      background-color: lightgray;
+    }
+
+    .lich-dat-phong table {
+      border-collapse: collapse;
+      margin-right: 100px;
+    }
+
+    .lich-dat-phong table,
+    .lich-dat-phong th,
+    .lich-dat-phong td {
+      border: 1px solid black;
+      padding: 10px;
+    }
+
+    .booked {
+      background-color: yellow;
+    }
+
+    .occupied {
+      background-color: red;
+      color: white;
+    }
+
+    #bookingForm input,
+    #bookingForm select {
       margin-bottom: 10px;
     }
-    #comment-form textarea {
-      resize: vertical;
+
+    #bookingForm {
+      font-size: 20px;
     }
-    #comment-list {
-      list-style-type: none;
-      padding: 0;
-    }
-    .comment {
-      margin-bottom: 20px;
+
+    .submit-dat-phong {
       padding: 10px;
-      border: 1px solid #ccc;
+      background-color: #00ddff;
+      border-radius: 6px;
     }
-    .comment .name {
-      font-weight: bold;
-    }
-    .rating span {
+
+    .submit-dat-phong:hover {
       cursor: pointer;
-      color: gray;
-    }
-    .rating span.checked {
-      color: gold;
     }
   </style>
 </head>
 <body>
-  <h1>Bình luận sản phẩm</h1>
+  <div class="lich-dat-phong">
+    <table>
+      <thead>
+        <tr>
+          <th></th>
+          <th>Thứ 2</th>
+          <th>Thứ 3</th>
+          <th>Thứ 4</th>
+          <th>Thứ 5</th>
+          <th>Thứ 6</th>
+          <th>Thứ 7</th>
+          <th>Chủ nhật</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>Phòng 1</td>
+          <td id="room1-2"></td>
+          <td id="room1-3"></td>
+          <td id="room1-4"></td>
+          <td id="room1-5"></td>
+          <td id="room1-6"></td>
+          <td id="room1-7"></td>
+          <td id="room1-8"></td>
+        </tr>
+        <tr>
+          <td>Phòng 2</td>
+          <td id="room2-2"></td>
+          <td id="room2-3"></td>
+          <td id="room2-4"></td>
+          <td id="room2-5"></td>
+          <td id="room2-6"></td>
+          <td id="room2-7"></td>
+          <td id="room2-8"></td>
+        </tr>
+        <!-- Các hàng phòng khác -->
+      </tbody>
+    </table>
 
-  <ul id="comment-list"></ul>
-  
-  <div id="comment-form">
-    <input type="text" id="name" placeholder="Nhập tên của bạn">
-    <div class="rating">
-      <span onclick="rateProduct(1)">★</span>
-      <span onclick="rateProduct(2)">★</span>
-      <span onclick="rateProduct(3)">★</span>
-      <span onclick="rateProduct(4)">★</span>
-      <span onclick="rateProduct(5)">★</span>
-    </div>
-    <textarea id="comment" placeholder="Nhập đánh giá của bạn"></textarea>
-    <button onclick="submitComment()">Gửi đánh giá</button>
+    <form id="bookingForm">
+      <label for="roomNumber">Số phòng:</label>
+      <input type="number" id="roomNumber" min="1" max="12" required>
+      <br>
+
+      <label for="day">Thứ:</label>
+      <select id="day" required>
+        <option value="2">Thứ 2</option>
+        <option value="3">Thứ 3</option>
+        <option value="4">Thứ 4</option>
+        <option value="5">Thứ 5</option>
+        <option value="6">Thứ 6</option>
+        <option value="7">Thứ 7</option>
+        <option value="8">Chủ nhật</option>
+      </select>
+      <br>
+
+      <label for="status">Trạng thái:</label>
+      <select id="status" required>
+        <option value="booked">Đặt trước</option>
+        <option value="occupied">Đã có người</option>
+      </select>
+      <br>
+
+      <button type="submit" class="submit-dat-phong">Đặt phòng</button>
+    </form>
   </div>
 
-  
-
   <script>
-    var selectedRating = 0;
+    function confirmDelete(cell) {
+      const confirmResult = confirm("Bạn có muốn xóa lịch đặt phòng này không?");
+      if (confirmResult) {
+        const cellId = cell.id;
+        cell.classList.remove('booked', 'occupied');
+        localStorage.removeItem(cellId);
+      }
+    }
 
-    function rateProduct(rating) {
-      selectedRating = rating;
+    document.getElementById('bookingForm').addEventListener('submit', function(e) {
+      e.preventDefault();
+      const roomNumber = document.getElementById('roomNumber').value;
+      const day = parseInt(document.getElementById('day').value);
+      const status = document.getElementById('status').value;
 
-      var stars = document.querySelectorAll(".rating span");
+      const cellId = `room${roomNumber}-${day}`;
+      const cell = document.getElementById(cellId);
 
-      for (var i = 0; i < stars.length; i++) {
-        if (i < rating) {
-          stars[i].classList.add("checked");
-        } else {
-          stars[i].classList.remove("checked");
+      if (cell.classList.contains('booked')) {
+        cell.classList.remove('booked');
+        localStorage.removeItem(cellId);
+      } else {
+        cell.classList.add(status);
+        localStorage.setItem(cellId, status);
+      }
+
+      document.getElementById('roomNumber').value = '';
+      document.getElementById('day').value = '2';
+      document.getElementById('status').value = 'booked';
+    });
+
+    document.addEventListener('click', function(e) {
+      const cell = e.target;
+      if (cell.tagName === 'TD') {
+        if (cell.classList.contains('booked') || cell.classList.contains('occupied')) {
+          confirmDelete(cell);
         }
       }
-    }
+    });
 
-    function submitComment() {
-      var nameInput = document.getElementById("name");
-      var commentInput = document.getElementById("comment");
-
-      var name = nameInput.value;
-      var comment = commentInput.value;
-
-      if (name.trim() === "" || selectedRating === 0 || comment.trim() === "") {
-        alert("Vui lòng điền đầy đủ thông tin!");
-        return;
+    window.onload = function() {
+      for (let room = 1; room <= 12; room++) {
+        for (let day = 2; day <= 8; day++) {
+          const cellId = `room${room}-${day}`;
+          const status = localStorage.getItem(cellId);
+          if (status) {
+            const cell = document.getElementById(cellId);
+            cell.classList.add(status);
+          }
+        }
       }
+    };
 
-      var commentList = document.getElementById("comment-list");
-
-      var li = document.createElement("li");
-      li.classList.add("comment");
-
-      var nameElement = document.createElement("div");
-      nameElement.classList.add("name");
-      nameElement.textContent = name;
-
-      var ratingElement = document.createElement("div");
-      ratingElement.classList.add("rating");
-      ratingElement.textContent = "Số sao: " + selectedRating;
-
-      var commentElement = document.createElement("div");
-      commentElement.textContent = comment;
-
-      li.appendChild(nameElement);
-      li.appendChild(ratingElement);
-      li.appendChild(commentElement);
-
-      commentList.appendChild(li);
-
-      // Reset form fields
-      nameInput.value = "";
-      commentInput.value = "";
-
-      // Reset rating stars
-      var stars = document.querySelectorAll(".rating span");
-      for (var i = 0; i < stars.length; i++) {
-        stars[i].classList.remove("checked");
-      }
-      selectedRating = 0;
-    }
+    // Thêm đoạn mã sau vào cuối script
+    const allCells = document.querySelectorAll('td[id^="room"]');
+    allCells.forEach(cell => {
+      cell.addEventListener('click', function(e) {
+        const confirmResult = confirm("Bạn có muốn xóa lịch đặt phòng này không?");
+        if (confirmResult) {
+          const cellId = cell.id;
+          cell.classList.remove('booked', 'occupied');
+          localStorage.removeItem(cellId);
+        }
+      });
+    });
   </script>
 </body>
 </html>

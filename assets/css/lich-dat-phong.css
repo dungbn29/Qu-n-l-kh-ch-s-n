@@ -1,0 +1,49 @@
+.lich-dat-phong {
+    margin-top: 20px;
+    display: flex;
+}
+
+.lich-dat-phong table th {
+    width: 100px;
+    background-color: lightgray;
+}
+
+.lich-dat-phong table {
+    border-collapse: collapse;
+    margin-right: 100px;
+}
+
+.lich-dat-phong table,
+.lich-dat-phong th,
+.lich-dat-phong td {
+    border: 1px solid black;
+    padding: 10px;
+}
+
+.booked {
+    background-color: yellow;
+}
+
+.occupied {
+    background-color: red;
+    color: white;
+}
+
+#bookingForm input,#bookingForm select {
+    margin-bottom: 10px;
+    
+}
+
+#bookingForm{
+    font-size: 20px;
+}
+
+.submit-dat-phong{
+    padding: 10px;
+    background-color: #00ddff;
+    border-radius: 6px;
+}
+
+.submit-dat-phong:hover{
+    cursor: pointer;
+}

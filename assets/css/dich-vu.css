@@ -1,31 +1,41 @@
-.tab-dich-vu{
-    width: 100%;
-    
+.title-dich-vu{
+    font-weight: bold;
+    font-size: 25px;
+    margin-left: 50px;
+    margin-top: 20px;
 }
 
 .div-dich-vu{
     display: flex;
     width: 100%;
+    
 }
 
 .dich-vu{
     width: 100px;
-    height: 100px;
     margin: 50px;
+    border: 1px solid #000;
+    border-radius: 6px;
 }
 
-.anh-dich-vu{
+/* .anh-dich-vu{
+    border: 1px solid #000;
+} */
+
+.anh-dich-vu img{
+    border-radius: 6px;
     width: 100%;
-    height: 100%;
-    background-size: cover;
-
-}
-
-.taxi{
-    background-image: url(d:\dung\code\web\Quan-tri-khach-san\assets\images\co-vn.png);
+    height: 100px;
 }
 
 .dich-vu button{
     width: 100%;
     padding: 10px 0;
+    background-color: #00ddff;
+    border: none;
+    border-radius: 6px;
+}
+
+.dich-vu button:hover{
+    cursor: pointer;
 }

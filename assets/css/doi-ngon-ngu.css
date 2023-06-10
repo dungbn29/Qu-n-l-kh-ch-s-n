@@ -1,7 +1,8 @@
 .doi-ngon-ngu {
     display: flex;
     align-items: center;
-    margin-left: 300px;
+    margin-right: 100px;
+    text-align: center;
 }
 
 #logo {

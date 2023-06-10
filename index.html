@@ -12,6 +12,9 @@
     <link rel="stylesheet" href="assets/css/le-tan.css">
     <link rel="stylesheet" href="assets/css/phan-hoi.css">
     <link rel="stylesheet" href="assets/css/dich-vu.css">
+    <link rel="stylesheet" href="assets/css/thong-ke.css">
+    <link rel="stylesheet" href="assets/css/khach-doan.css">
+    <link rel="stylesheet" href="assets/css/lich-dat-phong.css">
 
     <!-- import fontanswer - icon -->
     <link rel="stylesheet" href="./library/fontawesome/css/fontawesome.min.css">
@@ -23,7 +26,7 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     
     <title>QUẢN TRỊ KHÁCH SẠN</title>
-    <link rel="icon" type="image/x-icon" href="">
+    <link rel="icon" type="image/x-icon" href="assets/images/image-removebg-preview.png">
 </head>
 <body>
 
@@ -31,7 +34,7 @@
     <div class="header">
         <span class="name-hotel">Dung's Hotel</span>
         <div >
-            <!-- <input type="text" placeholder="Nhập từ khóa tìm kiếm" class="input-with-icon"> -->
+            
         </div>
         <div>
             <span class="dang-nhap">ADMIN</span>
@@ -45,16 +48,16 @@
     <!-- main -->
     <div class="main">
         <div class="tab">
-            <button class="tablinks" onclick="openTab(event, 'Tab1')">Sơ đồ phòng</button>
-            <button class="tablinks" onclick="openTab(event, 'Tab2')">Lễ Tân</button>
-            <button class="tablinks" onclick="openTab(event, 'Tab3')">Lịch Đặt Phòng</button>
-            <button class="tablinks" onclick="openTab(event, 'Tab4')">Khách Đoàn</button>
-            <button class="tablinks" onclick="openTab(event, 'Tab5')">Thống Kê</button>
-            <button class="tablinks" onclick="openTab(event, 'Tab6')">Phản Hồi</button>
-            <button class="tablinks" onclick="openTab(event, 'Tab7')">Dịch Vụ</button>
+            <!-- <button class="tablinks" onclick="openTab(event, 'Tab1')" id="so-do-phong">Sơ đồ phòng</button> -->
+            <button class="tablinks" onclick="openTab(event, 'Tab2')" id="le-tan">Lễ Tân</button>
+            <button class="tablinks" onclick="openTab(event, 'Tab3')" id="lich-dat-phong">Lịch Đặt Phòng</button>
+            <button class="tablinks" onclick="openTab(event, 'Tab4')" id="khach-doan">Khách Đoàn</button>
+            <button class="tablinks" onclick="openTab(event, 'Tab5')" id="thong-ke">Thống Kê</button>
+            <button class="tablinks" onclick="openTab(event, 'Tab6')" id="phan-hoi">Phản Hồi</button>
+            <button class="tablinks" onclick="openTab(event, 'Tab7')" id="dich-vu">Dịch Vụ</button>
         </div>
 
-        <div id="Tab1" class="tabcontent">
+        <!-- <div id="Tab1" class="tabcontent">
             <div class="header-tab1">
                 <div class="trang-thai">
                     <div class="theo-o" id="filter-buttons">
@@ -74,7 +77,7 @@
 
                 </div>
             </div>
-        </div>
+        </div> -->
 
         <div id="Tab2" class="tabcontent tab-2">
             <p class="le-tan">Quản lý lễ tân</p>
@@ -95,19 +98,255 @@
         </div>
 
         <div id="Tab3" class="tabcontent">
-            
+            <h2>Lịch khách đặt phòng </h2>
+            <div class="lich-dat-phong">
+                <table>
+                    <thead>
+                        <tr>
+                            <th></th>
+                            <th>Thứ 2</th>
+                            <th>Thứ 3</th>
+                            <th>Thứ 4</th>
+                            <th>Thứ 5</th>
+                            <th>Thứ 6</th>
+                            <th>Thứ 7</th>
+                            <th>Chủ nhật</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>Phòng 1</td>
+                            <td id="room1-2"></td>
+                            <td id="room1-3"></td>
+                            <td id="room1-4"></td>
+                            <td id="room1-5"></td>
+                            <td id="room1-6"></td>
+                            <td id="room1-7"></td>
+                            <td id="room1-8"></td>
+                        </tr>
+
+                        <tr>
+                            <td>Phòng 2</td>
+                            <td id="room2-2"></td>
+                            <td id="room2-3"></td>
+                            <td id="room2-4"></td>
+                            <td id="room2-5"></td>
+                            <td id="room2-6"></td>
+                            <td id="room2-7"></td>
+                            <td id="room2-8"></td>
+                        </tr>
+                        <tr>
+                            <td>Phòng 3</td>
+                            <td id="room1-2"></td>
+                            <td id="room1-3"></td>
+                            <td id="room1-4"></td>
+                            <td id="room1-5"></td>
+                            <td id="room1-6"></td>
+                            <td id="room1-7"></td>
+                            <td id="room1-8"></td>
+                        </tr>
+                        <tr>
+                            <td>Phòng 4</td>
+                            <td id="room1-2"></td>
+                            <td id="room1-3"></td>
+                            <td id="room1-4"></td>
+                            <td id="room1-5"></td>
+                            <td id="room1-6"></td>
+                            <td id="room1-7"></td>
+                            <td id="room1-8"></td>
+                        </tr>
+                        <tr>
+                            <td>Phòng 5</td>
+                            <td id="room1-2"></td>
+                            <td id="room1-3"></td>
+                            <td id="room1-4"></td>
+                            <td id="room1-5"></td>
+                            <td id="room1-6"></td>
+                            <td id="room1-7"></td>
+                            <td id="room1-8"></td>
+                        </tr>
+                        <tr>
+                            <td>Phòng 6</td>
+                            <td id="room1-2"></td>
+                            <td id="room1-3"></td>
+                            <td id="room1-4"></td>
+                            <td id="room1-5"></td>
+                            <td id="room1-6"></td>
+                            <td id="room1-7"></td>
+                            <td id="room1-8"></td>
+                        </tr>
+                        <tr>
+                            <td>Phòng 7</td>
+                            <td id="room1-2"></td>
+                            <td id="room1-3"></td>
+                            <td id="room1-4"></td>
+                            <td id="room1-5"></td>
+                            <td id="room1-6"></td>
+                            <td id="room1-7"></td>
+                            <td id="room1-8"></td>
+                        </tr>
+                        <tr>
+                            <td>Phòng 8</td>
+                            <td id="room1-2"></td>
+                            <td id="room1-3"></td>
+                            <td id="room1-4"></td>
+                            <td id="room1-5"></td>
+                            <td id="room1-6"></td>
+                            <td id="room1-7"></td>
+                            <td id="room1-8"></td>
+                        </tr>
+                        <tr>
+                            <td>Phòng 9</td>
+                            <td id="room1-2"></td>
+                            <td id="room1-3"></td>
+                            <td id="room1-4"></td>
+                            <td id="room1-5"></td>
+                            <td id="room1-6"></td>
+                            <td id="room1-7"></td>
+                            <td id="room1-8"></td>
+                        </tr>
+                        <tr>
+                            <td>Phòng 10</td>
+                            <td id="room1-2"></td>
+                            <td id="room1-3"></td>
+                            <td id="room1-4"></td>
+                            <td id="room1-5"></td>
+                            <td id="room1-6"></td>
+                            <td id="room1-7"></td>
+                            <td id="room1-8"></td>
+                        </tr>
+                        <tr>
+                            <td>Phòng 11</td>
+                            <td id="room1-2"></td>
+                            <td id="room1-3"></td>
+                            <td id="room1-4"></td>
+                            <td id="room1-5"></td>
+                            <td id="room1-6"></td>
+                            <td id="room1-7"></td>
+                            <td id="room1-8"></td>
+                        </tr>
+                        <tr>
+                            <td>Phòng 12</td>
+                            <td id="room1-2"></td>
+                            <td id="room1-3"></td>
+                            <td id="room1-4"></td>
+                            <td id="room1-5"></td>
+                            <td id="room1-6"></td>
+                            <td id="room1-7"></td>
+                            <td id="room1-8"></td>
+                        </tr>
+                        
+                    </tbody>
+                </table>
+
+                <form id="bookingForm">
+                    <label for="roomNumber">Số phòng:</label>
+                    <input type="number" id="roomNumber" min="1" max="12" required>
+                    <br>
+
+                    <label for="day">Thứ:</label>
+                    <select id="day" required>
+                        <option value="2">Thứ 2</option>
+                        <option value="3">Thứ 3</option>
+                        <option value="4">Thứ 4</option>
+                        <option value="5">Thứ 5</option>
+                        <option value="6">Thứ 6</option>
+                        <option value="7">Thứ 7</option>
+                        <option value="8">Chủ nhật</option>
+                    </select>
+                    <br>
+
+                    <label for="status">Trạng thái:</label>
+                    <select id="status" required>
+                        <option value="booked">Đã đặt</option>
+                        <option value="occupied">Đang ở</option>
+                    </select>
+                    <br>
+
+                    <input type="submit" value="Lưu" class="submit-dat-phong">
+                </form>
+            </div>
         </div>
 
         <div id="Tab4" class="tabcontent">
-            
+            <p class="title-khach-doan">Đặt phòng cho khách theo đoàn</p>
+            <form class="khach-doan">
+                <label for="fullname">Họ và tên:</label>
+                <input type="text" id="fullname" name="fullname" required>
+                <br>
+                <label for="idcard">CMND/CCCD:</label>
+                <input type="text" id="idcard" name="idcard" required>
+                <br>
+                <label for="checkin">Ngày vào: </label>
+                <input type="date" id="checkin" name="checkin" required>
+  
+                <label for="checkout">Ngày ra: </label>
+                <input type="date" id="checkout" name="checkout" required>
+
+                <br>
+                    <label for="number">Số lượng phòng: </label>
+                    <input type="number" id="number" name="number"  min="1" required>
+                <br>
+                <label for="roomtype">Hạng phòng: </label>
+                <select id="roomtype" name="roomtype" required>
+                    <option value="standard">Tiêu chuẩn</option>
+                    <option value="business">Thương gia</option>
+                    <option value="presidential">Tổng thống</option>
+                </select>
+                <br>
+                <input type="submit" value="Đặt phòng" class="submit">
+            </form>
         </div>
 
-        <div id="Tab5" class="tabcontent">
+        <div id="Tab5" class="tabcontent thong-ke">
+            <p class="title-thong-ke">Thống kê doanh thu khách sạn</p>
+
+            <label for="start-date">Ngày bắt đầu:</label>
+            <input type="date" id="start-date">
             
+            <label for="end-date">Ngày kết thúc:</label>
+            <input type="date" id="end-date">
+            
+            <br>
+            <label for="room-type">Loại phòng:</label>
+            <select id="room-type">
+                <option value="Tiêu chuẩn">Tiêu chuẩn</option>
+                <option value="Thương gia">Thương gia</option>
+                <option value="Tổng thống">Tổng thống</option>
+            </select>
+            
+            <label for="booking-count">Số lượng đặt phòng:</label>
+            <input type="number" id="booking-count" min="1">
+            
+            <button onclick="addRevenue()" class="button-thong-ke">Thêm</button>
+            
+
+            <h2>Thống kê doanh thu</h2>
+            <table>
+                <thead>
+                    <tr>
+                        <th>Ngày</th>
+                        <th>Giá niêm yết</th>
+                        <th>Loại phòng</th>
+                        <th>Số lượng đặt phòng</th>
+                        <th>Thành tiền</th>
+                        <th>Thao tác</th>
+                    </tr>
+                </thead>
+                <tbody id="revenue-table-body"></tbody>
+                <tfoot>
+                    <tr>
+                        <td colspan="4" style="text-align: right;">Tổng doanh thu:</td>
+                        <td id="total-revenue"></td>
+                        <td></td>
+                    </tr>
+                </tfoot>
+            </table>
+
         </div>
 
         <div id="Tab6" class="tabcontent">
-            <h1>Phản hồi của khách hàng</h1>
+            <p class="title-phan-hoi">Phản hồi của khách hàng</p>
             <ul id="comment-list"></ul>
             <div id="comment-form">
                 <input type="text" id="name-kh" placeholder="Nhập tên của bạn">
@@ -123,20 +362,21 @@
             </div>
         </div>
 
-        <div id="Tab7" class="tabcontent tab-dich-vu">
+        <div id="Tab7" class="tabcontent">
+            <p class="title-dich-vu">Dịch vụ ngoài khách sạn</p>
             <div class="div-dich-vu">
                 <div class="dich-vu">
-                    <div class="anh-dich-vu taxi"></div>
+                    <div class="anh-dich-vu"><img src="assets/images/goi-taxi.png" alt="taxi"></div>
                     <button>Gọi Xe</button>
                 </div>
 
                 <div class="dich-vu">
-                    <div class="anh-dich-vu bike"></div>
+                    <div class="anh-dich-vu"><img src="assets/images/bike.png" alt="bike"></div>
                     <button >Đặt Xe</button>
                 </div>
             
                 <div class="dich-vu">
-                    <div class="anh-dich-vu nha-hang"></div>
+                    <div class="anh-dich-vu"><img src="assets/images/restaurant.jpg" alt="nhà hàng"></div>
                     <button>Đặt Bàn</button>
                 </div>
             </div>
@@ -145,7 +385,7 @@
 
     <!-- footer -->
     <div class="footer">
-
+        <p class="p-footer">make by Tien Dung Chu</p>
     </div>
 
     <!-- Import thu vien Jquery -->
@@ -157,5 +397,7 @@
     <script src="assets/js/tab.js"></script>
     <script src="assets/js/le-tan.js"></script>
     <script src="assets/js/phan-hoi.js"></script>
+    <script src="assets/js/thong-ke.js"></script>
+    <script src="assets/js/lich-dat-phong.js"></script>
 </body>
 </html>

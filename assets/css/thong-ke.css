@@ -1,0 +1,48 @@
+#Tab5{
+    text-align: left;
+}
+
+.title-thong-ke{
+    font-weight: bold;
+    font-size: 30px;
+    text-align: center;
+    margin: 20px;
+}
+
+#start-date{
+    margin-bottom: 30px;
+    margin-right: 40px;
+}
+
+#room-type{
+    margin-bottom: 30px;
+    margin-right: 40px;
+}
+
+.thong-ke label{
+    font-size: 20px;
+}
+
+.button-thong-ke{
+    margin-left: 40px;
+    font-size: 15px;
+    padding: 3px 10px;
+    border-radius: 6px;
+    background-color: #00DDFF;
+}
+
+.thong-ke table {
+    border-collapse: collapse;
+    width: 100%;
+}
+
+.thong-ke th, .thong-ke td {
+    padding: 8px;
+    text-align: left;
+    border-bottom: 1px solid #ddd;
+}
+
+#total-revenue {
+    font-weight: bold;
+}
+
