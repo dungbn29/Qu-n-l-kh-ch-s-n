@@ -51,7 +51,7 @@ window.onload = function() {
   }
 };
 
-// Thêm đoạn mã sau vào cuối script
+// xóa
 const allCells = document.querySelectorAll('td[id^="room"]');
 allCells.forEach(cell => {
   cell.addEventListener('click', function(e) {

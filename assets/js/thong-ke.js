@@ -1,6 +1,6 @@
 const revenueData = [];
 
-// Hàm tính giá tiền niêm yết theo loại phòng
+
 function calculatePrice(roomType) {
   let price = 0;
   if (roomType === 'Tiêu chuẩn') {
@@ -15,11 +15,10 @@ function calculatePrice(roomType) {
 
 // Hàm tính số ngày giữa hai ngày
 function calculateDays(startDate, endDate) {
-  const oneDay = 24 * 60 * 60 * 1000; // 1 ngày = 24 giờ * 60 phút * 60 giây * 1000 milliseconds
+  const oneDay = 24 * 60 * 60 * 1000; 
   const start = new Date(startDate);
   const end = new Date(endDate);
-  const days = Math.round(Math.abs((end - start) / oneDay)) + 1; // Số ngày bằng tổng số milliseconds chia cho số milliseconds trong 1 ngày
-  return days;
+  const days = Math.round(Math.abs((end - start) / oneDay)) + 1; 
 }
 
 // Hàm thêm dữ liệu vào bảng thống kê
